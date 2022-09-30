@@ -4,10 +4,10 @@
     <string name="product_name">Nom du produit</string>
     <string name="brand">Marque</string>
 
-    <string name="bar_code">Code barres : </string>
-    <string name="quantity">Quantité : </string>
-    <string name="sold_location">Vendu en : </string>
-    <string name="ingredients">Ingrédients : </string>
-    <string name="allergen">Substances allergènes : </string>
-    *<string name="additives">Additifs : </string>
+    <string name="bar_code">Code barres : %1$s</string>
+    <string name="quantity">Quantité : %1$s</string>
+    <string name="sold_locations">Vendu en : %1$s</string>
+    <string name="ingredients">Ingrédients : %1$s</string>
+    <string name="allergens">Substances allergènes : %1$s</string>
+    *<string name="additives">Additifs : %1$s</string>
 </resources>
