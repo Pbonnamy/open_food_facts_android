@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(applicationContext,"Hello World",Toast.LENGTH_SHORT).show()
 
-        //verbose log
-        Log.v("MainActivity","Hello World")
+        if (BuildConfig.DEBUG) {
+            Log.v("MainActivity","Hello World")
+        }
     }
 }
