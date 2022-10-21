@@ -18,10 +18,11 @@
 
     <TextView
         android:id="@+id/product_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/product_img"
         app:layout_constraintStart_toStartOf="@id/guidelineL"
+        app:layout_constraintEnd_toEndOf="@id/barrier"
         android:layout_marginTop="20dp"
         tools:text="@string/product_name"
         android:textStyle="bold"
@@ -29,10 +30,11 @@
 
     <TextView
         android:id="@+id/brand"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/product_name"
         app:layout_constraintStart_toStartOf="@id/guidelineL"
+        app:layout_constraintEnd_toEndOf="@id/barrier"
         tools:text="@string/brand"
         android:textStyle="italic"
         android:textSize="15sp" />
@@ -123,5 +125,13 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/global_vertical_padding"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="end"
+        app:layout_constraintEnd_toStartOf="@id/nutriscore"
+        app:constraint_referenced_ids="product_name, brand" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
