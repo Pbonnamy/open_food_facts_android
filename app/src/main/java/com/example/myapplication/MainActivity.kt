@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+
 //edouard@marquez.cool
 
 class MainActivity : AppCompatActivity() {
@@ -46,12 +47,12 @@ class MainActivity : AppCompatActivity() {
         setItemText(R.id.additives, R.string.additives, product.additives.joinToString(", "))
         setItemText(R.id.sold_locations, R.string.sold_locations, product.sold_locations.joinToString(", "))
 
+        findViewById<ImageView>(R.id.nutriscore).setImageResource(product.getNutriscoreDrawable())
     }
 
     fun setItemText(idView: Int, idString: Int,  text: String) {
         val string = getString(idString, if (text.isEmpty()) "Ø" else text)
         val spannable = SpannableString(string)
-
         if (string.indexOf(":") != -1) {
             spannable.setSpan(StyleSpan(Typeface.BOLD), 0, string.indexOf(":") + 1, 0)
         }
