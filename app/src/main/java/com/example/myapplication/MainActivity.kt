@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.squareup.picasso.Picasso
 
 //edouard@marquez.cool
 
@@ -48,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         setItemText(R.id.sold_locations, R.string.sold_locations, product.sold_locations.joinToString(", "))
 
         findViewById<ImageView>(R.id.nutriscore).setImageResource(product.getNutriscoreDrawable())
+
+        Picasso.get().load(product.img).into(findViewById<ImageView>(R.id.product_img))
     }
 
     fun setItemText(idView: Int, idString: Int,  text: String) {
