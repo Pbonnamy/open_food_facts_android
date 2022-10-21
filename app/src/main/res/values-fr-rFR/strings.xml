@@ -9,5 +9,5 @@
     <string name="sold_locations">Vendu en : %1$s</string>
     <string name="ingredients">Ingrédients : %1$s</string>
     <string name="allergens">Substances allergènes : %1$s</string>
-    *<string name="additives">Additifs : %1$s</string>
+    <string name="additives">Additifs : %1$s</string>
 </resources>
