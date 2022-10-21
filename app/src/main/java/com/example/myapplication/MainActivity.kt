@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.StyleSpan
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+//edouard@marquez.cool
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,21 +36,26 @@ class MainActivity : AppCompatActivity() {
             listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
         )
 
-        findViewById<TextView>(R.id.product_name).text = product.name
-        findViewById<TextView>(R.id.brand).text = product.brand
-        findViewById<TextView>(R.id.bar_code).text = product.bar_code
-        findViewById<TextView>(R.id.quantity).text = product.quantity
+        setItemText(R.id.product_name, R.string.product_name, product.name)
+        setItemText(R.id.brand, R.string.brand, product.brand)
+        setItemText(R.id.bar_code, R.string.bar_code, product.bar_code)
+        setItemText(R.id.quantity, R.string.quantity, product.quantity)
 
-        findViewById<TextView>(R.id.ingredients).text = product.ingredients.joinToString(", ")
-        findViewById<TextView>(R.id.sold_locations).text = product.sold_locations.joinToString(", ")
-        findViewById<TextView>(R.id.allergen).text = product.allergens.joinToString(", ")
-        findViewById<TextView>(R.id.additives).text = product.additives.joinToString(", ")
+        setItemText(R.id.ingredients, R.string.ingredients, product.ingredients.joinToString(", "))
+        setItemText(R.id.allergen, R.string.allergens, product.allergens.joinToString(", "))
+        setItemText(R.id.additives, R.string.additives, product.additives.joinToString(", "))
+        setItemText(R.id.sold_locations, R.string.sold_locations, product.sold_locations.joinToString(", "))
 
-        /*val string = getString(R.string.barcode, "234567865432456789")
+    }
+
+    fun setItemText(idView: Int, idString: Int,  text: String) {
+        val string = getString(idString, if (text.isEmpty()) "Ø" else text)
         val spannable = SpannableString(string)
-        spannable.setSpan(StyleSpan(Typeface.BOLD), 0, string.indexOf(":"), 0)
-        setText(spannable)*/
 
-        //edouard@marquez.cool
+        if (string.indexOf(":") != -1) {
+            spannable.setSpan(StyleSpan(Typeface.BOLD), 0, string.indexOf(":") + 1, 0)
+        }
+
+        findViewById<TextView>(idView).text = spannable
     }
 }

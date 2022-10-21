@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Mon comparateur</string>
 
-    <string name="product_name">Nom du produit</string>
-    <string name="brand">Marque</string>
+    <string name="product_name">%1$s</string>
+    <string name="brand">%1$s</string>
 
     <string name="bar_code">Code barres : %1$s</string>
     <string name="quantity">Quantité : %1$s</string>
