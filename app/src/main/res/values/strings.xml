@@ -11,4 +11,6 @@
     <string name="allergens">Allergen : %1$s</string>
     <string name="additives">Additives : %1$s</string>
 
+    <string name="nutriscore_placeholder">Image of the nutriscore</string>
+    <string name="product_placeholder">Image of the product</string>
 </resources>

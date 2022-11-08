@@ -10,4 +10,7 @@
     <string name="ingredients">Ingrédients : %1$s</string>
     <string name="allergens">Substances allergènes : %1$s</string>
     <string name="additives">Additifs : %1$s</string>
+
+    <string name="nutriscore_placeholder">Image du nutriscore</string>
+    <string name="product_placeholder">Image du product</string>
 </resources>
