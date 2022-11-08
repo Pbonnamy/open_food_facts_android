@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.squareup.picasso.Picasso
+import com.bumptech.glide.Glide
 
 //edouard@marquez.cool
 
@@ -50,11 +50,11 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.nutriscore).setImageResource(product.getNutriscoreDrawable())
 
-        Picasso.get().load(product.img).into(findViewById<ImageView>(R.id.product_img))
+        Glide.with(this).load(product.img).into(findViewById(R.id.product_img))
     }
 
-    fun setItemText(idView: Int, idString: Int,  text: String) {
-        val string = getString(idString, if (text.isEmpty()) "Ø" else text)
+    private fun setItemText(idView: Int, idString: Int, text: String) {
+        val string = getString(idString, text.ifEmpty { "Ø" })
         val spannable = SpannableString(string)
         if (string.indexOf(":") != -1) {
             spannable.setSpan(StyleSpan(Typeface.BOLD), 0, string.indexOf(":") + 1, 0)
