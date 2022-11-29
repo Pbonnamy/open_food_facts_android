@@ -13,6 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/cover"
+            app:layout_constraintGuide_begin="264dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="16dp"/>
+
         <ImageView
             android:id="@+id/cover"
             android:layout_width="match_parent"
@@ -28,9 +50,8 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/cover"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineT"
+            app:layout_constraintStart_toStartOf="@id/guidelineL"
             tools:text="@string/product_name"
             android:textStyle="bold"
             android:textSize="18sp" />
@@ -40,10 +61,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="@id/guidelineL"
             tools:text="@string/brand"
-            android:textStyle="italic"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/nutriscore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/brand"
+            app:layout_constraintStart_toStartOf="@id/guidelineL"
+            app:layout_constraintBottom_toTopOf="@id/guidelineB"
+            tools:text="@string/nutriscore"
             android:textSize="15sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

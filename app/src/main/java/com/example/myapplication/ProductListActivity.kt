@@ -65,11 +65,13 @@ class ProductListActivity : AppCompatActivity() {
         private val productNameTextView = v.findViewById<TextView>(R.id.name)
         private val productBrandTextView = v.findViewById<TextView>(R.id.brand)
         private val productCoverImageView = v.findViewById<ImageView>(R.id.cover)
+        private val productNutriscoreTextView = v.findViewById<TextView>(R.id.nutriscore)
         private val currentActivity = v.context
 
         fun updateProduct(product: Product) {
             productNameTextView.text = product.name
             productBrandTextView.text = product.brand
+            productNutriscoreTextView.text = currentActivity.getString(R.string.nutriscore, product.nutriscore)
 
             Glide.with(currentActivity)
                 .load(product.cover_url)

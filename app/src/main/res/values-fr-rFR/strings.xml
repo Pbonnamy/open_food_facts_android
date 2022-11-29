@@ -4,6 +4,7 @@
     <string name="product_name">%1$s</string>
     <string name="brand">%1$s</string>
 
+    <string name="nutriscore">Nutriscore : %1$s</string>
     <string name="bar_code">Code barres : %1$s</string>
     <string name="quantity">Quantité : %1$s</string>
     <string name="sold_locations">Vendu en : %1$s</string>
