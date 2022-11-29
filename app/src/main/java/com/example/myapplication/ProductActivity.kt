@@ -33,7 +33,7 @@ class ProductActivity : AppCompatActivity() {
             "Cassegrain",
             "3083680085304",
             "400 g (280 g net égoutté)",
-            "a",
+            "A",
             "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
             listOf("France", "Japon", "Suisse"),
             listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),

@@ -14,11 +14,11 @@ class Product(
 ) {
     fun getNutriscoreDrawable(): Int {
         return when (nutriscore) {
-            "a" -> R.drawable.nutriscore_a
-            "b" -> R.drawable.nutriscore_b
-            "c" -> R.drawable.nutriscore_c
-            "d" -> R.drawable.nutriscore_d
-            "e" -> R.drawable.nutriscore_e
+            "A" -> R.drawable.nutriscore_a
+            "B" -> R.drawable.nutriscore_b
+            "C" -> R.drawable.nutriscore_c
+            "D" -> R.drawable.nutriscore_d
+            "E" -> R.drawable.nutriscore_e
             else -> throw Exception("Nutriscore not found")
         }
     }
