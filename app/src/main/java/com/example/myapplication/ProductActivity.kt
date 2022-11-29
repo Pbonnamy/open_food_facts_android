@@ -5,27 +5,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.StyleSpan
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 
 //edouard@marquez.cool
 
-class MainActivity : AppCompatActivity() {
+class ProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product)
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar_background))
 
-        Toast.makeText(applicationContext,"Hello World",Toast.LENGTH_SHORT).show()
+        /*Toast.makeText(applicationContext,"Hello World",Toast.LENGTH_SHORT).show()
 
         if (BuildConfig.DEBUG) {
-            Log.v("MainActivity","Hello World")
-        }
+            Log.v("ProductActivity","Hello World")
+        }*/
 
         val product = Product(
             "Petits pois et carottes",
@@ -38,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
         )
 
+        this.setProductInformations(product)
+    }
+
+    private fun setProductInformations(product: Product) {
         findViewById<TextView>(R.id.product_name).applyBoldText(product.name, R.string.product_name)
         findViewById<TextView>(R.id.brand).applyBoldText(product.brand, R.string.brand)
         findViewById<TextView>(R.id.bar_code).applyBoldText(product.bar_code, R.string.bar_code)
