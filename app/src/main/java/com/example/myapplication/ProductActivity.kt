@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide
 class ProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.product)
+        setContentView(R.layout.activity_product)
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar_background))
 
@@ -34,6 +34,8 @@ class ProductActivity : AppCompatActivity() {
             "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
             listOf("France", "Japon", "Suisse"),
             listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
+            emptyList(),
+            emptyList()
         )
 
         this.setProductInformations(product)

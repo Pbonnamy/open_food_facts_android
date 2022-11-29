@@ -9,8 +9,8 @@ class Product(
     val img: String,
     val sold_locations: List<String>,
     val ingredients: List<String>,
-    val allergens: List<String> = listOf(),
-    val additives: List<String> = listOf(),
+    val allergens: List<String>,
+    val additives: List<String>,
 ) {
     fun getNutriscoreDrawable(): Int {
         return when (nutriscore) {
