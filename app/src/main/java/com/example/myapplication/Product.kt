@@ -6,7 +6,7 @@ class Product(
     val bar_code: String,
     val quantity: String,
     val nutriscore: String,
-    val img: String,
+    val cover_url: String,
     val sold_locations: List<String>,
     val ingredients: List<String>,
     val allergens: List<String>,

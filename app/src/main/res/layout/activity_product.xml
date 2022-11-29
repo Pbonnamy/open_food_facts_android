@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/product_img"
+            android:id="@+id/cover"
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:contentDescription="@string/product_placeholder"
@@ -22,10 +22,10 @@
             tools:srcCompat="@drawable/placeholder" />
 
         <TextView
-            android:id="@+id/product_name"
+            android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/product_img"
+            app:layout_constraintTop_toBottomOf="@+id/cover"
             app:layout_constraintStart_toStartOf="@id/guidelineL"
             app:layout_constraintEnd_toEndOf="@id/barrier"
             android:layout_marginTop="20dp"
@@ -37,7 +37,7 @@
             android:id="@+id/brand"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/product_name"
+            app:layout_constraintTop_toBottomOf="@+id/name"
             app:layout_constraintStart_toStartOf="@id/guidelineL"
             app:layout_constraintEnd_toEndOf="@id/barrier"
             tools:text="@string/brand"
@@ -49,7 +49,7 @@
             android:layout_width="78dp"
             android:layout_height="42dp"
             android:contentDescription="@string/nutriscore_placeholder"
-            app:layout_constraintTop_toTopOf="@+id/product_name"
+            app:layout_constraintTop_toTopOf="@+id/name"
             app:layout_constraintBottom_toBottomOf="@+id/brand"
             app:layout_constraintEnd_toEndOf="@id/guidelineR"
             tools:srcCompat="@drawable/nutriscore_a" />
@@ -139,7 +139,7 @@
             android:layout_height="0dp"
             app:barrierDirection="end"
             app:layout_constraintEnd_toStartOf="@id/nutriscore"
-            app:constraint_referenced_ids="product_name, brand" />
+            app:constraint_referenced_ids="name, brand" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

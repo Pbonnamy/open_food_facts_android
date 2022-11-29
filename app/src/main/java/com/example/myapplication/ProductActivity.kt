@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,8 @@ class ProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
+
+        this.changeActivity()
 
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar_background))
 
@@ -42,7 +45,7 @@ class ProductActivity : AppCompatActivity() {
     }
 
     private fun setProductInformations(product: Product) {
-        findViewById<TextView>(R.id.product_name).applyBoldText(product.name, R.string.product_name)
+        findViewById<TextView>(R.id.name).applyBoldText(product.name, R.string.product_name)
         findViewById<TextView>(R.id.brand).applyBoldText(product.brand, R.string.brand)
         findViewById<TextView>(R.id.bar_code).applyBoldText(product.bar_code, R.string.bar_code)
         findViewById<TextView>(R.id.quantity).applyBoldText(product.quantity, R.string.quantity)
@@ -53,7 +56,7 @@ class ProductActivity : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.nutriscore).setImageResource(product.getNutriscoreDrawable())
 
-        Glide.with(this).load(product.img).into(findViewById(R.id.product_img))
+        Glide.with(this).load(product.cover_url).into(findViewById(R.id.cover))
     }
 
     private fun TextView.applyBoldText(text: String, idString: Int) {
@@ -63,6 +66,11 @@ class ProductActivity : AppCompatActivity() {
             spannable.setSpan(StyleSpan(Typeface.BOLD), 0, string.indexOf(":") + 1, 0)
         }
         this.text = spannable
+    }
+
+    private fun changeActivity() {
+        val intent = Intent(this, ProductListActivity::class.java)
+        startActivity(intent)
     }
 
 }
